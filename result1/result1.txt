@@ -1,0 +1,112 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786935814.004830    9816 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786935815.560349    9816 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+{'target_variable': 'Adsorption amount', 'best_params': OrderedDict([('colsample_bytree', 0.7510075901274644), ('gamma', 0.041682195547568704), ('learning_rate', 0.07258628387492475), ('max_depth', 16), ('min_child_weight', 6), ('n_estimators', 594), ('reg_alpha', 0.4798935580958997), ('reg_lambda', 1.0), ('subsample', 0.5)]), 'cv_metrics': Fold           3.0000
+Train_RMSE     2.7723
+Test_RMSE     17.6298
+Train_R2       0.9994
+Test_R2        0.9750
+dtype: float64, 'feature_importance': {'Dosage': np.float32(0.24502806), 'Pollutant_Sulfamethoxazole': np.float32(0.20435533), 'SBET': np.float32(0.13318768), 'Initial concentration': np.float32(0.06090489), 'V': np.float32(0.039103203), 'MW': np.float32(0.038706414), 'VTotal': np.float32(0.03080951), 'H': np.float32(0.029987976), 'E': np.float32(0.029945338), 'N': np.float32(0.029252488), 'Dp': np.float32(0.022309307), 'C': np.float32(0.018985279), 'A': np.float32(0.016579434), 'Pollutant_Sulfathiazole': np.float32(0.016012613), 'O': np.float32(0.015817694), 'Initial pH': np.float32(0.015119949), 'S': np.float32(0.014600995), 'Pollutant_Sulfadiazine': np.float32(0.012297186), 'Temperature': np.float32(0.0107137235), 'Kow': np.float32(0.0065489933), 'Pollutant_Sulfapyridine': np.float32(0.005683231), 'B': np.float32(0.0039258082), 'Pollutant_Sulfamerazine': np.float32(0.00012485762), 'Pollutant_Sulfamethazine': np.float32(0.0), 'Pollutant_Sulfonamide': np.float32(0.0)}, 'H_statistics':                        Feature1                  Feature2  H_statistic
+75                            C                Initial pH     0.426117
+27                       VTotal                         H     0.367096
+54                           Dp                Initial pH     0.285801
+110                           H                         N     0.269168
+32                       VTotal                Initial pH     0.141377
+..                          ...                       ...          ...
+267                           V  Pollutant_Sulfamethazine     0.000000
+278                         Kow     Pollutant_Sulfonamide     0.000000
+296  Pollutant_Sulfamethoxazole     Pollutant_Sulfonamide     0.000000
+298     Pollutant_Sulfapyridine     Pollutant_Sulfonamide     0.000000
+299     Pollutant_Sulfathiazole     Pollutant_Sulfonamide     0.000000
+
+[300 rows x 3 columns], 'tree_models': {'XGBoost': {'metrics': {'train_rmse': np.float64(2.5724994105451833), 'test_rmse': np.float64(19.830156972153176), 'train_r2': 0.9995413217876833, 'test_r2': 0.9485225153693231}}, 'RandomForest': {'metrics': {'train_rmse': np.float64(9.452816177284332), 'test_rmse': np.float64(24.50059795612042), 'train_r2': 0.9938067306471292, 'test_r2': 0.9214188498342047}}, 'GradientBoosting': {'metrics': {'train_rmse': np.float64(1.4923764775544837), 'test_rmse': np.float64(17.256407437613234), 'train_r2': 0.9998456330463318, 'test_r2': 0.9610178501974207}}}, 'shap_feature_importance': {'XGBoost':                        Feature  Importance
+7                       Dosage   47.276424
+0                         SBET   37.748451
+8        Initial concentration   25.624422
+1                       VTotal    6.737209
+5                            H    3.587755
+11                          MW    3.356798
+3                            C    3.126650
+2                           Dp    2.390739
+6                            N    2.229128
+10                  Initial pH    1.578803
+4                            O    1.533158
+9                  Temperature    1.014577
+21  Pollutant_Sulfamethoxazole    0.750420
+13                           S    0.735004
+16                           V    0.359031
+12                           E    0.338512
+14                           A    0.330541
+22     Pollutant_Sulfapyridine    0.102924
+18      Pollutant_Sulfadiazine    0.084316
+15                           B    0.083093
+17                         Kow    0.068948
+19     Pollutant_Sulfamerazine    0.005021
+20    Pollutant_Sulfamethazine    0.000000
+23     Pollutant_Sulfathiazole    0.000000
+24       Pollutant_Sulfonamide    0.000000, 'RandomForest':                        Feature  Importance
+7                       Dosage   42.348759
+0                         SBET   42.229345
+8        Initial concentration   25.060099
+1                       VTotal    6.053290
+5                            H    4.424560
+6                            N    4.408931
+2                           Dp    1.702260
+3                            C    1.241619
+4                            O    1.188174
+10                  Initial pH    0.907327
+17                         Kow    0.797134
+12                           E    0.694733
+11                          MW    0.594578
+14                           A    0.501320
+16                           V    0.470775
+13                           S    0.462808
+21  Pollutant_Sulfamethoxazole    0.426800
+9                  Temperature    0.364304
+15                           B    0.362905
+18      Pollutant_Sulfadiazine    0.274508
+23     Pollutant_Sulfathiazole    0.221764
+20    Pollutant_Sulfamethazine    0.028866
+22     Pollutant_Sulfapyridine    0.027472
+24       Pollutant_Sulfonamide    0.011834
+19     Pollutant_Sulfamerazine    0.000157, 'GradientBoosting':                        Feature  Importance
+0                         SBET   47.150236
+7                       Dosage   38.623337
+8        Initial concentration   26.412645
+5                            H    4.999531
+6                            N    3.879402
+3                            C    3.150111
+1                       VTotal    2.914122
+2                           Dp    2.478708
+4                            O    1.659230
+10                  Initial pH    1.439877
+18      Pollutant_Sulfadiazine    1.024785
+17                         Kow    0.984797
+21  Pollutant_Sulfamethoxazole    0.823639
+9                  Temperature    0.757307
+12                           E    0.715498
+13                           S    0.482823
+14                           A    0.480339
+15                           B    0.477023
+11                          MW    0.306603
+16                           V    0.283430
+23     Pollutant_Sulfathiazole    0.238718
+24       Pollutant_Sulfonamide    0.097764
+22     Pollutant_Sulfapyridine    0.077666
+20    Pollutant_Sulfamethazine    0.017705
+19     Pollutant_Sulfamerazine    0.000377}, 'shap_interactions':                        Feature1                 Feature2  Interaction_Strength
+147                      Dosage    Initial concentration              7.899596
+7                          SBET    Initial concentration              6.733253
+6                          SBET                   Dosage              5.429565
+111                           H                   Dosage              2.462615
+150                      Dosage                       MW              2.303813
+..                          ...                      ...                   ...
+295  Pollutant_Sulfamethoxazole  Pollutant_Sulfathiazole              0.000000
+296  Pollutant_Sulfamethoxazole    Pollutant_Sulfonamide              0.000000
+297     Pollutant_Sulfapyridine  Pollutant_Sulfathiazole              0.000000
+298     Pollutant_Sulfapyridine    Pollutant_Sulfonamide              0.000000
+299     Pollutant_Sulfathiazole    Pollutant_Sulfonamide              0.000000
+
+[300 rows x 3 columns]}
+Press any key to continue . . .

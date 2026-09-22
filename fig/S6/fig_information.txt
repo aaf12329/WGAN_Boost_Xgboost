@@ -1,0 +1,195 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1787063820.674610   19288 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1787063822.540416   19288 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+path=C:\Users\Administrator\Desktop\New_machine\result2\\xgboost_model_adsorption_amount.joblib
+训练集 R²: 0.9924, RMSE: 10.56
+测试集 R²: 0.9615, RMSE: 15.63
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but SVR was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but SVR was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\svm_model.joblib
+训练集 R²: 0.5049, RMSE: 84.24
+测试集 R²: 0.3922, RMSE: 69.35
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but RandomForestRegressor was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but RandomForestRegressor was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\randomforest_model.joblib
+训练集 R²: 0.9882, RMSE: 13.19
+测试集 R²: 0.9433, RMSE: 18.51
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but LinearRegression was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but LinearRegression was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\mlr_model.joblib
+训练集 R²: 0.6229, RMSE: 74.59
+测试集 R²: 0.1794, RMSE: 72.30
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but GradientBoostingRegressor was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but GradientBoostingRegressor was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\gradientboosting_model.joblib
+训练集 R²: 0.9982, RMSE: 5.11
+测试集 R²: 0.9482, RMSE: 19.32
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but MLPRegressor was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but MLPRegressor was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\ann_model.joblib
+训练集 R²: 0.9419, RMSE: 29.09
+测试集 R²: 0.8747, RMSE: 29.78
+path=C:\Users\Administrator\Desktop\New_machine\result2\\xgboost_model_adsorption_amount.joblib
+训练集 R²: 0.9783, RMSE: 16.89
+测试集 R²: 0.9646, RMSE: 21.54
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but SVR was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but SVR was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\svm_model.joblib
+训练集 R²: 0.4906, RMSE: 81.94
+测试集 R²: 0.5038, RMSE: 79.90
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but RandomForestRegressor was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but RandomForestRegressor was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\randomforest_model.joblib
+训练集 R²: 0.9780, RMSE: 17.11
+测试集 R²: 0.9727, RMSE: 18.46
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but LinearRegression was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but LinearRegression was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\mlr_model.joblib
+训练集 R²: 0.5791, RMSE: 74.73
+测试集 R²: 0.6217, RMSE: 68.83
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but GradientBoostingRegressor was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but GradientBoostingRegressor was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\gradientboosting_model.joblib
+训练集 R²: 0.9862, RMSE: 13.64
+测试集 R²: 0.9798, RMSE: 15.47
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but MLPRegressor was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but MLPRegressor was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\ann_model.joblib
+训练集 R²: 0.9331, RMSE: 29.95
+测试集 R²: 0.9326, RMSE: 28.37
+path=C:\Users\Administrator\Desktop\New_machine\result2\\xgboost_model_adsorption_amount.joblib
+训练集 R²: 0.9155, RMSE: 32.43
+测试集 R²: 0.9383, RMSE: 31.15
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but SVR was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but SVR was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\svm_model.joblib
+训练集 R²: 0.4854, RMSE: 80.03
+测试集 R²: 0.5142, RMSE: 87.08
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but RandomForestRegressor was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but RandomForestRegressor was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\randomforest_model.joblib
+训练集 R²: 0.9017, RMSE: 34.87
+测试集 R²: 0.9205, RMSE: 34.94
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but LinearRegression was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but LinearRegression was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\mlr_model.joblib
+训练集 R²: 0.5546, RMSE: 74.95
+测试集 R²: 0.6579, RMSE: 71.75
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but GradientBoostingRegressor was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but GradientBoostingRegressor was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\gradientboosting_model.joblib
+训练集 R²: 0.9011, RMSE: 35.36
+测试集 R²: 0.9007, RMSE: 38.52
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but MLPRegressor was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but MLPRegressor was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\ann_model.joblib
+训练集 R²: 0.9247, RMSE: 30.62
+测试集 R²: 0.9565, RMSE: 26.12
+path=C:\Users\Administrator\Desktop\New_machine\result2\\xgboost_model_adsorption_amount.joblib
+训练集 R²: 0.9356, RMSE: 28.84
+测试集 R²: 0.9265, RMSE: 31.93
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but SVR was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but SVR was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\svm_model.joblib
+训练集 R²: 0.4923, RMSE: 81.15
+测试集 R²: 0.4950, RMSE: 82.96
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but RandomForestRegressor was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but RandomForestRegressor was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\randomforest_model.joblib
+训练集 R²: 0.9020, RMSE: 35.27
+测试集 R²: 0.9007, RMSE: 38.14
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but LinearRegression was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but LinearRegression was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\mlr_model.joblib
+训练集 R²: 0.6036, RMSE: 71.00
+测试集 R²: 0.4881, RMSE: 86.42
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but GradientBoostingRegressor was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but GradientBoostingRegressor was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\gradientboosting_model.joblib
+训练集 R²: 0.9084, RMSE: 34.11
+测试集 R²: 0.8888, RMSE: 40.46
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but MLPRegressor was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but MLPRegressor was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\ann_model.joblib
+训练集 R²: 0.9329, RMSE: 29.22
+测试集 R²: 0.9338, RMSE: 31.13
+path=C:\Users\Administrator\Desktop\New_machine\result2\\xgboost_model_adsorption_amount.joblib
+训练集 R²: 0.9325, RMSE: 30.11
+测试集 R²: 0.9095, RMSE: 32.66
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but SVR was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but SVR was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\svm_model.joblib
+训练集 R²: 0.4936, RMSE: 82.46
+测试集 R²: 0.4750, RMSE: 77.81
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but RandomForestRegressor was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but RandomForestRegressor was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\randomforest_model.joblib
+训练集 R²: 0.8160, RMSE: 50.03
+测试集 R²: 0.8301, RMSE: 43.50
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but LinearRegression was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but LinearRegression was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\mlr_model.joblib
+训练集 R²: 0.5983, RMSE: 73.15
+测试集 R²: 0.4807, RMSE: 79.80
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but GradientBoostingRegressor was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but GradientBoostingRegressor was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\gradientboosting_model.joblib
+训练集 R²: 0.8946, RMSE: 37.75
+测试集 R²: 0.9109, RMSE: 31.96
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but MLPRegressor was fitted without feature names
+  warnings.warn(
+D:\anaconda\envs\tf\lib\site-packages\sklearn\utils\validation.py:2742: UserWarning: X has feature names, but MLPRegressor was fitted without feature names
+  warnings.warn(
+path=C:\Users\Administrator\Desktop\New_machine\result2\\ann_model.joblib
+训练集 R²: 0.9425, RMSE: 27.72
+测试集 R²: 0.8875, RMSE: 36.82
+Press any key to continue . . .

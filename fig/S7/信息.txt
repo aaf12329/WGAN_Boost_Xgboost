@@ -1,0 +1,15 @@
+先搞xgb,RF,GBR
+另外的几个有点麻烦
+
+Outlier Impact（带正负方向）：
+Dosage: 105.3363
+Initial pH: 18.4982
+H: 17.0662
+Initial concentration: -15.8507
+A: 13.3503
+MW: 11.9368
+N: 10.2176
+C: -9.9102
+O: -7.2518
+VTotal: 6.1110
+Press any key to continue . . .

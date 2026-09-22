@@ -1,0 +1,123 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1787034929.329423   15184 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1787034930.979230   15184 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+✅ XGBoost: R² = 0.9902, RMSE = 11.25
+✅ RandomForest: R² = 0.9855, RMSE = 13.67
+✅ GradientBoosting: R² = 0.9908, RMSE = 10.88
+✅ MLR: R² = 0.3257, RMSE = 93.19
+✅ SVM: R² = 0.4066, RMSE = 87.42
+D:\anaconda\envs\tf\lib\site-packages\sklearn\neural_network\_multilayer_perceptron.py:781: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (500) reached and the optimization hasn't converged yet.
+  warnings.warn(
+✅ ANN: R² = 0.8865, RMSE = 38.24
+⏭️ 跳过 MLR，不是树模型
+⏭️ 跳过 SVM，不是树模型
+⏭️ 跳过 ANN，不是树模型
+{'target_variable': 'Adsorption capacity', 'best_params': OrderedDict([('colsample_bytree', 0.5516492023770434), ('gamma', 0.14697785574466965), ('learning_rate', 0.10122380879175921), ('max_depth', 7), ('min_child_weight', 4), ('n_estimators', 512), ('reg_alpha', 0.3844906720012566), ('reg_lambda', 0.4564760663329583), ('subsample', 0.8032019346698123)]), 'cv_metrics': Fold           3.0000
+Train_RMSE     0.5451
+Test_RMSE     20.4049
+Train_R2       1.0000
+Test_R2        0.9756
+dtype: float64, 'feature_importance': {'Dosage': np.float32(0.32416603), 'SBET': np.float32(0.09509422), 'Pollutant_Sulfamethoxazole': np.float32(0.08946495), 'V': np.float32(0.059481073), 'VTotal': np.float32(0.04973288), 'Kow': np.float32(0.038939152), 'N': np.float32(0.03650839), 'H': np.float32(0.033131313), 'MW': np.float32(0.03266563), 'B': np.float32(0.032262452), 'Initial concentration': np.float32(0.02935266), 'Pollutant_Sulfathiazole': np.float32(0.025739867), 'S': np.float32(0.024428332), 'Dp': np.float32(0.020705884), 'C': np.float32(0.020146552), 'Pollutant_Sulfapyridine': np.float32(0.01958823), 'A': np.float32(0.015955102), 'O': np.float32(0.015729874), 'Initial pH': np.float32(0.0131929815), 'E': np.float32(0.010134293), 'Temperature': np.float32(0.007254171), 'Pollutant_Sulfadiazine': np.float32(0.0060591595), 'Pollutant_Sulfamerazine': np.float32(0.00022575531), 'Pollutant_Sulfamethazine': np.float32(4.1062962e-05), 'Pollutant_Sulfonamide': np.float32(0.0)}, 'H_statistics':                        Feature1                    Feature2  H_statistic
+144                           N     Pollutant_Sulfapyridine     1.000000
+65                           Dp  Pollutant_Sulfamethoxazole     1.000000
+115                           H                          MW     1.000000
+30                       VTotal       Initial concentration     0.870532
+62                           Dp      Pollutant_Sulfadiazine     0.864561
+..                          ...                         ...          ...
+293    Pollutant_Sulfamethazine       Pollutant_Sulfonamide     0.000000
+292    Pollutant_Sulfamethazine     Pollutant_Sulfathiazole     0.000000
+296  Pollutant_Sulfamethoxazole       Pollutant_Sulfonamide     0.000000
+298     Pollutant_Sulfapyridine       Pollutant_Sulfonamide     0.000000
+299     Pollutant_Sulfathiazole       Pollutant_Sulfonamide     0.000000
+
+[300 rows x 3 columns], 'tree_models': {'XGBoost': {'metrics': {'train_rmse': np.float64(2.062109541250535), 'test_rmse': np.float64(11.245500796667919), 'train_r2': 0.9997930199090133, 'test_r2': 0.9901803812099976}}, 'RandomForest': {'metrics': {'train_rmse': np.float64(9.077777197588109), 'test_rmse': np.float64(13.674332751340202), 'train_r2': 0.9959888939102474, 'test_r2': 0.9854805784491589}}, 'GradientBoosting': {'metrics': {'train_rmse': np.float64(0.8071055310240155), 'test_rmse': np.float64(10.876002523671096), 'train_r2': 0.9999682922257765, 'test_r2': 0.9908150747484488}}, 'MLR': {'metrics': {'train_rmse': np.float64(91.46562511836292), 'test_rmse': np.float64(93.19073416329528), 'train_r2': 0.5927876659174318, 'test_r2': 0.32565445423512374}}, 'SVM': {'metrics': {'train_rmse': np.float64(101.97916573016194), 'test_rmse': np.float64(87.41978833814943), 'train_r2': 0.4937931477559022, 'test_r2': 0.406587721532088}}, 'ANN': {'metrics': {'train_rmse': np.float64(37.04549136804903), 'test_rmse': np.float64(38.23545089048446), 'train_r2': 0.9332000973878971, 'test_r2': 0.8864807641985739}}}, 'shap_feature_importance': {'XGBoost':                        Feature  Importance
+7                       Dosage   60.707932
+0                         SBET   47.784264
+1                       VTotal   11.670590
+8        Initial concentration   11.400066
+5                            H    7.090099
+21  Pollutant_Sulfamethoxazole    5.193034
+11                          MW    5.062568
+2                           Dp    4.744033
+3                            C    4.373887
+10                  Initial pH    2.623152
+6                            N    2.612492
+4                            O    1.726076
+9                  Temperature    1.387468
+16                           V    1.336635
+12                           E    1.266016
+22     Pollutant_Sulfapyridine    1.118223
+17                         Kow    0.436036
+23     Pollutant_Sulfathiazole    0.232232
+15                           B    0.187330
+14                           A    0.183034
+13                           S    0.175849
+18      Pollutant_Sulfadiazine    0.034968
+19     Pollutant_Sulfamerazine    0.000000
+20    Pollutant_Sulfamethazine    0.000000
+24       Pollutant_Sulfonamide    0.000000, 'RandomForest':                        Feature  Importance
+7                       Dosage   60.809805
+0                         SBET   49.470953
+8        Initial concentration   14.985078
+1                       VTotal    7.638741
+5                            H    7.220609
+6                            N    5.654306
+2                           Dp    4.887792
+11                          MW    2.922214
+3                            C    2.868485
+17                         Kow    2.638166
+21  Pollutant_Sulfamethoxazole    2.164970
+16                           V    1.875076
+10                  Initial pH    1.542176
+4                            O    1.201138
+22     Pollutant_Sulfapyridine    1.159451
+12                           E    0.884126
+9                  Temperature    0.718426
+15                           B    0.548696
+14                           A    0.349395
+23     Pollutant_Sulfathiazole    0.306977
+13                           S    0.305585
+18      Pollutant_Sulfadiazine    0.251461
+20    Pollutant_Sulfamethazine    0.052716
+24       Pollutant_Sulfonamide    0.014621
+19     Pollutant_Sulfamerazine    0.001207, 'GradientBoosting':                        Feature  Importance
+0                         SBET   58.606471
+7                       Dosage   51.120069
+8        Initial concentration   11.984422
+5                            H    7.750516
+1                       VTotal    7.533236
+21  Pollutant_Sulfamethoxazole    6.326781
+6                            N    5.704492
+3                            C    4.898691
+2                           Dp    4.388457
+10                  Initial pH    2.562595
+17                         Kow    2.547121
+11                          MW    2.065506
+4                            O    1.896635
+16                           V    1.883528
+22     Pollutant_Sulfapyridine    1.427738
+9                  Temperature    1.218203
+12                           E    0.852481
+14                           A    0.645536
+13                           S    0.342412
+23     Pollutant_Sulfathiazole    0.329641
+18      Pollutant_Sulfadiazine    0.323102
+15                           B    0.311864
+20    Pollutant_Sulfamethazine    0.010649
+24       Pollutant_Sulfonamide    0.003658
+19     Pollutant_Sulfamerazine    0.000000}, 'shap_interactions':                        Feature1                    Feature2  Interaction_Strength
+6                          SBET                      Dosage              9.320681
+147                      Dosage       Initial concentration              6.479793
+111                           H                      Dosage              4.514194
+29                       VTotal                      Dosage              3.607957
+20                         SBET  Pollutant_Sulfamethoxazole              3.584626
+..                          ...                         ...                   ...
+260                           B  Pollutant_Sulfamethoxazole              0.000000
+295  Pollutant_Sulfamethoxazole     Pollutant_Sulfathiazole              0.000000
+296  Pollutant_Sulfamethoxazole       Pollutant_Sulfonamide              0.000000
+298     Pollutant_Sulfapyridine       Pollutant_Sulfonamide              0.000000
+299     Pollutant_Sulfathiazole       Pollutant_Sulfonamide              0.000000
+
+[300 rows x 3 columns]}
+Press any key to continue . . .

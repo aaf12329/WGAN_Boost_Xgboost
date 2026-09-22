@@ -1,0 +1,11 @@
+Initial concentration: 51.7625
+Dosage: 45.3287
+SBET: 32.1377
+N: 20.8301
+H: 14.1880
+VTotal: 14.0503
+C: 12.9375
+Initial pH: 11.9381
+O: 11.2503
+Dp: 10.6379
+Press any key to continue . . .
