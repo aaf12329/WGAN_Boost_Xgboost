@@ -46,19 +46,23 @@
 
 `Boosting/Gan_Boost_Xgb.py` 为数据增强版：加载 WGAN 生成数据进入同一套 Boosting 流程。
 
+`Boosting/LightGBM_CatBoost.py` 为 LightGBM / CatBoost 的同口径对比实验（贝叶斯调参）：**CatBoost 为当前全场最优模型**。
+
 ## 项目结构
 
 ```
 WGAN_Boost_Xgboost/
 ├── README.md
+├── requirements.md            # 运行环境与依赖清单
 ├── Dataset.csv                # 原始数据（文献整理）
 ├── main.py                    # 入口：真实数据 XGBoost 建模全流程
 ├── test.py                    # 入口：加载 WGAN 生成数据测试
 ├── Engage.bat                 # Windows 一键运行 test.py
 │
-├── Boosting/                  # XGBoost 建模模块
+├── Boosting/                  # XGBoost / Boosting 建模模块
 │   ├── Machine.py             # 核心建模流程（贝叶斯优化 / 交叉验证 / 多模型对比 / SHAP）
 │   ├── Machine_Fig10.py       # Fig10 专用副本（与 Machine.py 相同）
+│   ├── LightGBM_CatBoost.py   # LightGBM / CatBoost 贝叶斯调参对比
 │   └── Gan_Boost_Xgb.py       # WGAN 增强数据 + XGBoost 流程
 │
 ├── WGAN/                      # WGAN-GP 数据生成
@@ -75,6 +79,7 @@ WGAN_Boost_Xgboost/
 │
 ├── feature_rate_xgb_model/    # 特征重要性 XGBoost 子项目（含独立启动 bat）
 ├── results/                   # 各阶段模型与结果
+│   ├── lightgbm_catboost/     # LightGBM / CatBoost 调参结果（当前最优）
 │   ├── Adsorption_capacity/   # 吸附容量目标的六模型 .joblib
 │   ├── result1/               # 吸附量目标（阶段一）
 │   └── result2/               # 吸附量目标（阶段二：六模型 + 结果文本）
@@ -119,6 +124,9 @@ python Boosting/Gan_Boost_Xgb.py
 
 # 5) 快速自检：加载 WGAN 生成数据看前几行（Engage.bat 等价）
 python test.py
+
+# 6) LightGBM / CatBoost 贝叶斯调参对比（当前最优模型，完整搜索约 25 分钟）
+python Boosting/LightGBM_CatBoost.py
 ```
 
 补充材料图：进入 `fig/S4` ~ `fig/S15` 对应子目录，双击各自的 `Engage_plt.bat`（或 `test.bat`）运行，图片输出在脚本所在目录；`fig/S15/Fig_S15.py` 一个脚本一次性产出 S14–S18 五张图到 `fig/out/`。
@@ -144,6 +152,8 @@ python test.py
 
 | 模型 | R² | RMSE |
 |------|------|------|
+| **CatBoost**（贝叶斯调参） | **0.9619** | **15.70** |
+| LightGBM（贝叶斯调参） | 0.9531 | 17.44 |
 | GradientBoosting | 0.9397 | 19.36 |
 | XGBoost | 0.9281 | 21.15 |
 | RandomForest | 0.9089 | 23.80 |
@@ -228,19 +238,23 @@ Preprocessing conventions (shared by all modeling scripts):
 
 `Boosting/Gan_Boost_Xgb.py` is the data-augmented variant: it loads WGAN-generated data into the same Boosting pipeline.
 
+`Boosting/LightGBM_CatBoost.py` is a same-protocol comparison of LightGBM / CatBoost (Bayesian tuning): **CatBoost is the current best model overall**.
+
 ## Project Structure
 
 ```
 WGAN_Boost_Xgboost/
 ├── README.md
+├── requirements.md            # Runtime & dependency list
 ├── Dataset.csv                # Raw dataset (compiled from literature)
 ├── main.py                    # Entry: full XGBoost modeling pipeline on real data
 ├── test.py                    # Entry: test loading WGAN-generated data
 ├── Engage.bat                 # One-click run of test.py on Windows
 │
-├── Boosting/                  # XGBoost modeling module
+├── Boosting/                  # XGBoost / Boosting modeling module
 │   ├── Machine.py             # Core pipeline (Bayesian optimization / CV / model comparison / SHAP)
 │   ├── Machine_Fig10.py       # Dedicated copy for Fig10 (identical to Machine.py)
+│   ├── LightGBM_CatBoost.py   # Bayesian-tuned LightGBM / CatBoost comparison
 │   └── Gan_Boost_Xgb.py       # WGAN-augmented data + XGBoost pipeline
 │
 ├── WGAN/                      # WGAN-GP data generation
@@ -257,6 +271,7 @@ WGAN_Boost_Xgboost/
 │
 ├── feature_rate_xgb_model/    # Feature-importance XGBoost sub-project (own .bat launcher)
 ├── results/                   # Models and results from each stage
+│   ├── lightgbm_catboost/     # LightGBM / CatBoost tuned results (current best)
 │   ├── Adsorption_capacity/   # Six-model .joblib set for the capacity target
 │   ├── result1/               # Amount target (stage 1)
 │   └── result2/               # Amount target (stage 2: six models + result text)
@@ -301,6 +316,9 @@ python Boosting/Gan_Boost_Xgb.py
 
 # 5) Quick self-check: load WGAN-generated data (equivalent to Engage.bat)
 python test.py
+
+# 6) Bayesian-tuned LightGBM / CatBoost comparison (current best models, full search ~25 min)
+python Boosting/LightGBM_CatBoost.py
 ```
 
 Supplementary figures: enter `fig/S4` – `fig/S15` and double-click each folder's `Engage_plt.bat` (or `test.bat`); figures are saved next to the scripts. `fig/S15/Fig_S15.py` alone produces figures S14–S18 into `fig/out/` in one run.
@@ -326,6 +344,8 @@ Best parameters found for the amount target (`results/result2/result.txt`): `n_e
 
 | Model | R² | RMSE |
 |------|------|------|
+| **CatBoost** (Bayesian-tuned) | **0.9619** | **15.70** |
+| LightGBM (Bayesian-tuned) | 0.9531 | 17.44 |
 | GradientBoosting | 0.9397 | 19.36 |
 | XGBoost | 0.9281 | 21.15 |
 | RandomForest | 0.9089 | 23.80 |
