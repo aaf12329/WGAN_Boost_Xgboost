@@ -17,6 +17,9 @@
 | xgboost | 1.7.6 | >= 1.5.0 | 主回归模型 |
 | shap | 0.49.1 | >= 0.40.0 | SHAP 特征重要性与交互值 |
 | scikit-optimize | 0.10.2 | >= 0.9.0 | XGBoost 贝叶斯超参数优化（BayesSearchCV） |
+| lightgbm | 4.7.0 | >= 4.0.0 | LightGBM 对比模型（Boosting/LightGBM_CatBoost.py） |
+| catboost | 1.2.10 | >= 1.2.0 | CatBoost 对比模型（Boosting/LightGBM_CatBoost.py） |
+| tabpfn | 9.0.0 | — | TabPFN 基础模型（已安装；首次使用需在 Prior Labs 注册并接受许可） |
 | numpy | 2.2.6 | >= 1.20.0 | 数值计算 |
 | pandas | 2.3.3 | >= 1.3.0 | 数据读取与处理 |
 | matplotlib | 3.10.9 | >= 3.5.0 | 绘图（分布对比、SHAP、PDP） |
@@ -39,6 +42,9 @@ scikit-learn==1.7.2
 xgboost==1.7.6
 shap==0.49.1
 scikit-optimize==0.10.2
+lightgbm==4.7.0
+catboost==1.2.10
+tabpfn==9.0.0
 numpy==2.2.6
 pandas==2.3.3
 matplotlib==3.10.9

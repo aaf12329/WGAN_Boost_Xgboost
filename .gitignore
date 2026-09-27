@@ -20,3 +20,5 @@ Thumbs.db
 data/raw_videos/
 models/*.task
 *.pth
+catboost_info/
+__pycache__/

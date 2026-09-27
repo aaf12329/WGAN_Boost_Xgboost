@@ -1,0 +1,15 @@
+Target: Adsorption amount | X: (940, 25) | 时间: 2026-09-27 22:45:03.614557
+
+=== LightGBM ===
+best_params: {'colsample_bytree': 0.6753274358058754, 'learning_rate': 0.09999516871865302, 'min_child_samples': 5, 'n_estimators': 800, 'num_leaves': 8, 'reg_alpha': 1.0, 'reg_lambda': 0.0001, 'subsample': 0.5895646889262779, 'subsample_freq': 1}
+holdout: {'train_r2': 0.9994261629566531, 'train_rmse': np.float64(2.9049434958771294), 'test_r2': 0.9530549338190394, 'test_rmse': np.float64(17.43829213570771), 'test_mae': 8.368589863995586}
+CV mean: {'Fold': 3.0, 'Train_RMSE': 3.0291, 'Test_RMSE': 17.6551, 'Train_R2': 0.9993, 'Test_R2': 0.9738}
+CV std:  {'Fold': 1.5811, 'Train_RMSE': 0.3039, 'Test_RMSE': 3.186, 'Train_R2': 0.0001, 'Test_R2': 0.0104}
+importance top10: {'Initial concentration': np.float64(1062.2), 'SBET': np.float64(670.4), 'VTotal': np.float64(592.8), 'N': np.float64(458.4), 'C': np.float64(421.0), 'Dosage': np.float64(407.8), 'Initial pH': np.float64(387.2), 'O': np.float64(378.0), 'Dp': np.float64(376.4), 'H': np.float64(325.6)}
+
+=== CatBoost ===
+best_params: {'bagging_temperature': 0.0, 'depth': 7, 'iterations': 321, 'l2_leaf_reg': 1.506563311011772, 'learning_rate': 0.10537248751784054, 'subsample': 0.5}
+holdout: {'train_r2': 0.99952419623076, 'train_rmse': np.float64(2.6451928389711146), 'test_r2': 0.9619357061379068, 'test_rmse': np.float64(15.702465933134018), 'test_mae': 7.282927879876715}
+CV mean: {'Fold': 3.0, 'Train_RMSE': 2.5008, 'Test_RMSE': 18.216, 'Train_R2': 0.9995, 'Test_R2': 0.9724}
+CV std:  {'Fold': 1.5811, 'Train_RMSE': 0.1607, 'Test_RMSE': 2.9936, 'Train_R2': 0.0001, 'Test_R2': 0.0092}
+importance top10: {'Dosage': np.float64(26.37146905327419), 'SBET': np.float64(26.048264970946946), 'Initial concentration': np.float64(17.089414647984306), 'H': np.float64(5.341934383725405), 'Kow': np.float64(4.05905479828599), 'VTotal': np.float64(2.9875518363271203), 'Dp': np.float64(2.3466742759156123), 'S': np.float64(2.200532509723708), 'C': np.float64(2.1536289012874765), 'O': np.float64(2.0287811241695795)}
