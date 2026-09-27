@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import os
 import shap
 from xgboost import XGBRegressor
 def prepare_dataset(file_path, target_variable='Adsorption amount'):
@@ -54,7 +55,11 @@ best_params = dict(
     reg_lambda=0.0112,
 )
 
-X, y, _ = prepare_dataset(r"C:\Users\AAF12\Desktop\New_machine\Dataset.csv",
+#路径区(start)
+base_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # 项目根目录
+#路径区(stop)
+
+X, y, _ = prepare_dataset(os.path.join(base_path, "Dataset.csv"),
                           target_variable='Adsorption amount')
 
 results = {}

@@ -7,8 +7,8 @@ from sklearn.inspection import permutation_importance
 
 # ==================== 路径配置 ====================
 now_path = os.path.dirname(os.path.abspath(__file__))
-base_path = os.path.dirname(now_path)
-model_dir = os.path.join(base_path, "Adsorption_capacity")
+base_path = os.path.dirname(os.path.dirname(now_path))      # 项目根目录（fig/S9/Capacity → 根目录）
+model_dir = os.path.join(base_path, "results", "Adsorption_capacity")
 dataset_path = os.path.join(base_path, "Dataset.csv")
 
 # ==================== 数据准备函数（从原代码复制） ====================
@@ -117,7 +117,7 @@ fig.suptitle('Feature Importance of Six Models (Adsorption Dataset)', fontsize=1
 plt.tight_layout(rect=[0, 0, 1, 0.95])  # 为总标题留出空间
 
 # 保存图片
-output_dir = os.path.join(base_path, "figures")
+output_dir = now_path   # 保存到脚本所在目录
 os.makedirs(output_dir, exist_ok=True)
 output_path = os.path.join(output_dir, "feature_importance_comparison.png")
 plt.savefig(output_path, dpi=300, bbox_inches='tight')

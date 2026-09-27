@@ -3,6 +3,7 @@ import pandas as pd
 import shap
 import joblib
 import matplotlib.pyplot as plt
+import os
 
 # ==================== 你的 prepare_dataset ====================
 def prepare_dataset(file_path, target_variable='Adsorption amount'):
@@ -46,8 +47,11 @@ def prepare_dataset(file_path, target_variable='Adsorption amount'):
     return X, y, validation_set
 
 # ==================== 加载模型和数据 ====================
-file_path = r"C:\Users\AAF12\Desktop\New_machine\Dataset.csv"
-model_path = r"C:\Users\AAF12\Desktop\New_machine\feture_rate_xgb_model\xgboost_model.joblib"
+#路径区(start)
+base_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # 项目根目录
+#路径区(stop)
+file_path = os.path.join(base_path, "Dataset.csv")
+model_path = os.path.join(base_path, "feature_rate_xgb_model", "xgboost_model.joblib")
 
 X, y, validation_set = prepare_dataset(file_path, target_variable='Adsorption amount')
 print("实际参与训练的行数:", len(X)) 

@@ -20,9 +20,14 @@ from sklearn.svm import SVR
 from sklearn.neural_network import MLPRegressor
 from sklearn.metrics import r2_score, mean_squared_error
 from scipy.stats import norm
+import os
 
-file_path = r"C:\Users\Administrator\Desktop\New_machine\Dataset.csv"
-model_base=r"C:\Users\Administrator\Desktop\New_machine\result2\\"
+#路径区(start)
+base_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # 项目根目录
+#路径区(stop)
+
+file_path = os.path.join(base_path, "Dataset.csv")
+model_base = os.path.join(base_path, "results", "result2", "")
 se=['xgboost_model_adsorption_amount.joblib','svm_model.joblib','randomforest_model.joblib','mlr_model.joblib','gradientboosting_model.joblib','ann_model.joblib']
 seeds = [42, 123, 456, 789, 1024]
 

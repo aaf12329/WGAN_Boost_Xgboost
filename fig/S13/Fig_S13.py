@@ -4,6 +4,7 @@ import shap
 import joblib
 import matplotlib.pyplot as plt
 import xgboost as xgb
+import os
 
 # prepare_dataset 函数照抄（含 np.random.seed(42)）
 def prepare_dataset(file_path, target_variable='Adsorption amount'):
@@ -47,7 +48,10 @@ def prepare_dataset(file_path, target_variable='Adsorption amount'):
 
     return X, y, validation_set
 
-file_path = r"C:\Users\AAF12\Desktop\New_machine\Dataset.csv"
+#路径区(start)
+base_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # 项目根目录
+#路径区(stop)
+file_path = os.path.join(base_path, "Dataset.csv")
 
 # ===== 1. 训练 capacity 模型（S13 对应的目标变量）=====
 X, y, _ = prepare_dataset(file_path, target_variable='Adsorption capacity')
@@ -58,7 +62,7 @@ best_params = dict(n_estimators=515, learning_rate=0.1466, max_depth=10,
                    random_state=42)
 model = xgb.XGBRegressor(**best_params)
 model.fit(X, y)
-joblib.dump(model, r"C:\Users\AAF12\Desktop\New_machine\feture_rate_xgb_model\xgboost_model_adsorption_capacity.joblib")
+joblib.dump(model, os.path.join(base_path, "feature_rate_xgb_model", "xgboost_model_adsorption_capacity.joblib"))
 
 # ===== 2. SHAP =====
 shap_values = shap.TreeExplainer(model).shap_values(X)

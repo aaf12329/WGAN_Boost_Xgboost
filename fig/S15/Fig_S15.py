@@ -10,9 +10,12 @@ import matplotlib.pyplot as plt
 # ---------------- 全局配置 ----------------
 SEED = 42
 TARGET = 'Adsorption capacity'          # S14/S15/S17/S18 论文用的都是 capacity
-FILE_PATH = r"C:\Users\AAF12\Desktop\New_machine\Dataset.csv"
-MODEL_PATH = r"C:\Users\AAF12\Desktop\New_machine\feture_rate_xgb_model\xgboost_model_adsorption_capacity.joblib"
-OUT_DIR = r"C:\Users\AAF12\Desktop\New_machine\fig\out"
+#路径区(start)
+base_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # 项目根目录
+#路径区(stop)
+FILE_PATH = os.path.join(base_path, "Dataset.csv")
+MODEL_PATH = os.path.join(base_path, "feature_rate_xgb_model", "xgboost_model_adsorption_capacity.joblib")
+OUT_DIR = os.path.join(base_path, "fig", "out")
 os.makedirs(OUT_DIR, exist_ok=True)
 
 BEST_PARAMS = dict(n_estimators=515, learning_rate=0.1466, max_depth=10,

@@ -3,6 +3,7 @@ import pandas as pd
 import shap
 import joblib
 import matplotlib.pyplot as plt
+import os
 
 # prepare_dataset 和 S11 脚本里那个完全一样（含 np.random.seed(42)）
 # ...（函数定义照抄）
@@ -48,8 +49,11 @@ def prepare_dataset(file_path, target_variable='Adsorption amount'):
 
     return X, y, validation_set
 
-file_path = r"C:\Users\AAF12\Desktop\New_machine\Dataset.csv"
-model_path = r"C:\Users\AAF12\Desktop\New_machine\feture_rate_xgb_model\xgboost_model_adsorption_amount.joblib"
+#路径区(start)
+base_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # 项目根目录
+#路径区(stop)
+file_path = os.path.join(base_path, "Dataset.csv")
+model_path = os.path.join(base_path, "feature_rate_xgb_model", "xgboost_model_adsorption_amount.joblib")
 
 X, y, validation_set = prepare_dataset(file_path, target_variable='Adsorption amount')
 model = joblib.load(model_path)

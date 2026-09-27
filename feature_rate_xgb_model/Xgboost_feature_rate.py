@@ -27,6 +27,7 @@ from sklearn.impute import KNNImputer
 import xgboost as xgb
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 import joblib
+import os
 from scipy import stats
 from skopt import BayesSearchCV
 from skopt.space import Real, Integer, Categorical
@@ -476,6 +477,12 @@ def run_complete_analysis(file_path, target_variable='Adsorption capacity'):
     
     return results
 
+#路径区(start)
+base_path = os.path.dirname(os.path.abspath(__file__))            # feature_rate_xgb_model/
+root_path = os.path.dirname(base_path)                            # 项目根目录
+Dataset_path = os.path.join(root_path, "Dataset.csv")
+#路径区(stop)
+
 if __name__=="__main__":
-    result=run_complete_analysis(file_path = r"C:\Users\AAF12\Desktop\New_machine\Dataset.csv",target_variable='Adsorption amount')
+    result=run_complete_analysis(file_path=Dataset_path,target_variable='Adsorption amount')
     print(result)

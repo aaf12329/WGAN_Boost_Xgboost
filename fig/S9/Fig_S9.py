@@ -5,8 +5,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # ==================== 路径配置 ====================
-base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-model_dir = os.path.join(base_path, "result2")          # 模型目录
+base_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # 项目根目录
+model_dir = os.path.join(base_path, "results", "result2")   # 模型目录
 data_dir = os.path.join(base_path, "data")              # 数据目录
 
 # ==================== 数据集加载函数（示例） ====================

@@ -5,6 +5,7 @@ import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score, mean_squared_error
 from scipy.stats import norm
+import os
 
 def prepare_dataset(file_path, target_variable='Adsorption amount'):
     df = pd.read_csv(file_path)
@@ -20,15 +21,19 @@ def prepare_dataset(file_path, target_variable='Adsorption amount'):
     y = encoded_df[target_variable]
     return X, y, validation_set
 
+#路径区(start)
+base_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # 项目根目录
+#路径区(stop)
+
 # ===== 加载 =====
-file_path = r"C:\Users\Administrator\Desktop\New_machine\Dataset.csv"
-model_base=r"C:\Users\Administrator\Desktop\New_machine\result2\\"
+file_path = os.path.join(base_path, "Dataset.csv")
+model_base = os.path.join(base_path, "results", "result2", "")
 se=['xgboost_model_adsorption_amount.joblib','svm_model.joblib','randomforest_model.joblib','mlr_model.joblib','gradientboosting_model.joblib','ann_model.joblib']
 
-def draw(file_path = r"C:\Users\Administrator\Desktop\New_machine\Dataset.csv",model_path='',mo=''):
+def draw(file_path=file_path, model_path='', mo=''):
     # ===== 数据准备 =====
     X, y, validation_set = prepare_dataset(file_path)
-    scaler = joblib.load(r"C:\Users\Administrator\Desktop\New_machine\result1\scaler_adsorption_amount.joblib")
+    scaler = joblib.load(os.path.join(base_path, "results", "result1", "scaler_adsorption_amount.joblib"))
     X_scaled = scaler.transform(X)
     X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
 

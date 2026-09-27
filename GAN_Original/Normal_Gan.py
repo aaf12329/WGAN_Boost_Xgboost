@@ -1,4 +1,6 @@
+import os
 import numpy as np
+import pandas as pd
 import tensorflow as tf
 from tensorflow.keras.models import Sequential, Model
 from tensorflow.keras.layers import Dense, Input, Dropout
@@ -103,8 +105,22 @@ def generate_samples(generator, n_samples, noise_dim=100, scaler=None):
         fake_data = scaler.inverse_transform(fake_data)
     return fake_data
 
-#要先引入prepare_dataest函数
-X, y, _ = prepare_dataset("Dataset.csv", target_variable='Adsorption amount')
+#路径区(start)
+base_path = os.path.dirname(os.path.abspath(__file__))                    # GAN_Original/
+Dataset_path = os.path.join(os.path.dirname(base_path), "Dataset.csv")    # 项目根目录
+#路径区(stop)
+
+def prepare_dataset(file_path, target_variable='Adsorption amount'):
+    df = pd.read_csv(file_path)
+    df["Number"] = range(1, len(df) + 1)
+    encoded_df = pd.get_dummies(df, columns=['Pollutant'])
+    exclude_columns = ['Number', 'Reference', 'Adsorption amount',
+                       'Adsorption capacity', 'pKa3', 'pKa2', 'pKa1']
+    X = encoded_df.drop(columns=exclude_columns, errors='ignore')
+    y = encoded_df[target_variable]
+    return X, y
+
+X, y = prepare_dataset(Dataset_path, target_variable='Adsorption amount')
 
 # 训练 GAN
 generator, discriminator, scaler = train_gan(
@@ -120,4 +136,4 @@ fake_samples = generate_samples(generator, 1000, noise_dim=100, scaler=scaler)
 # 保存
 import pandas as pd
 fake_df = pd.DataFrame(fake_samples, columns=X.columns.tolist())
-fake_df.to_csv("generated_gan.csv", index=False)
+fake_df.to_csv(os.path.join(base_path, "generated_gan.csv"), index=False)

@@ -3,6 +3,7 @@ import pandas as pd
 import shap
 import joblib
 import matplotlib.pyplot as plt
+import os
 
 # prepare_dataset 函数照抄
 # prepare_dataset 函数照抄（含 np.random.seed(42)）
@@ -48,8 +49,11 @@ def prepare_dataset(file_path, target_variable='Adsorption amount'):
     return X, y, validation_set
 
 
-file_path = r"C:\Users\AAF12\Desktop\New_machine\Dataset.csv"
-model_path = r"C:\Users\AAF12\Desktop\New_machine\feture_rate_xgb_model\xgboost_model_adsorption_capacity.joblib"
+#路径区(start)
+base_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # 项目根目录
+#路径区(stop)
+file_path = os.path.join(base_path, "Dataset.csv")
+model_path = os.path.join(base_path, "feature_rate_xgb_model", "xgboost_model_adsorption_capacity.joblib")
 
 X, y, _ = prepare_dataset(file_path, target_variable='Adsorption capacity')
 model = joblib.load(model_path)

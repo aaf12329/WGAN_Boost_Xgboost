@@ -1,3 +1,4 @@
+import os
 import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
@@ -7,7 +8,7 @@ from sklearn.model_selection import train_test_split
 
 #路径区(start)
 base_path = os.path.dirname(os.path.abspath(__file__))
-Dataset_path=os.path.join(base_path,"Dataset.csv")
+Dataset_path=os.path.join(os.path.dirname(base_path),"Dataset.csv")   # 项目根目录
 #路径区(stop)
 
 #数据准备
@@ -48,6 +49,7 @@ real_data_scaled = scaler.fit_transform(X)
 
 # ================== 3. 超参数 ==================
 latent_dim = 100          # 噪声维度
+n_features = real_data_scaled.shape[1]
 data_dim = n_features     # 生成数据维度
 batch_size = 64
 epochs = 5000             # 训练轮数（可根据需要调整）
@@ -141,7 +143,7 @@ def train_generator():
     return gen_loss
 
 # ================== 9. 创建数据集 ==================
-dataset = tf.data.Dataset.from_tensor_slices(X_train).shuffle(10000).batch(batch_size)
+dataset = tf.data.Dataset.from_tensor_slices(real_data_scaled).shuffle(10000).batch(batch_size)
 
 # ================== 10. 训练循环 ==================
 print("开始训练...")
@@ -166,7 +168,8 @@ generated_scaled = generator(noise, training=False).numpy()
 generated_data = scaler.inverse_transform(generated_scaled)
 
 # ================== 12. 可视化对比（可选） ==================
-feature_names = ['Temperature', 'Pressure', 'Concentration', 'pH', 'Yield']
+feature_names = list(X.columns)
+real_data = X.astype(float).values
 fig, axes = plt.subplots(2, n_features, figsize=(15, 6))
 for i in range(n_features):
     axes[0, i].hist(real_data[:, i], bins=30, alpha=0.7, label='Real', color='blue')

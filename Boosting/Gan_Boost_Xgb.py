@@ -14,6 +14,7 @@
 # - seaborn>=0.11.0 (optional for visualization)
 #
 
+import os
 import pandas as pd
 import numpy as np
 import tensorflow as tf
@@ -433,18 +434,33 @@ def prepare_dataset(file_path, target_variable='Adsorption amount'):
     return X, y, validation_set
 
 
+#路径区(start)
+base_path = os.path.dirname(os.path.abspath(__file__))            # Boosting/
+root_path = os.path.dirname(base_path)                            # 项目根目录
+Dataset_path = os.path.join(root_path, "Dataset.csv")
+WGAN_dir = os.path.join(root_path, "WGAN")
+#路径区(stop)
+
+def _generated_csv_path():
+    # WGAN_Model.py 的产物：标准名优先；若被 Excel 占用会另存为 _new
+    for name in ("generated_data_wgan_gp.csv", "generated_data_wgan_gp_new.csv"):
+        path = os.path.join(WGAN_dir, name)
+        if os.path.exists(path):
+            return path
+    return os.path.join(WGAN_dir, "generated_data_wgan_gp.csv")
+
 def Gan_Model_Data():
     #加载GAN模型生成的数据进入
-    df = pd.read_csv(r"C:\Users\AAF12\Desktop\New_machine\generated_data_wgan_gp.csv")
+    df = pd.read_csv(_generated_csv_path())
     df["Number"] = range(1, len(df) + 1)
 
     random_numbers = np.random.choice(df["Number"].dropna().unique(), size=3)
     validation_set1 = df[df["Number"].isin(random_numbers)]
     drop_df = df[~df["Number"].isin(random_numbers)]
     exclude_columns = ['Number', 'Reference', 'Adsorption amount', 'Adsorption capacity', 'pKa3', 'pKa2', 'pKa1']
-    X = encoded_df.drop(columns=exclude_columns)
-    y = encoded_df[target_variable]
-    return X, y, validation_set 
+    X = drop_df.drop(columns=exclude_columns, errors='ignore')
+    y = drop_df['Adsorption amount']
+    return X, y, validation_set1
 
 def run_complete_analysis(file_path, target_variable='Adsorption capacity'):
     # Prepare dataset
@@ -509,5 +525,5 @@ def run_complete_analysis(file_path, target_variable='Adsorption capacity'):
     return results
 """
 if __name__=="__main__":
-    result=run_complete_analysis(file_path=r"C:\Users\AAF12\Desktop\New_machine\Dataset.csv")
+    result=run_complete_analysis(file_path=Dataset_path)
     print(result)

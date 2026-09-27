@@ -4,6 +4,7 @@ import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 import pandas as pd
+import os
 
 def prepare_dataset(file_path, target_variable='Adsorption amount'):
     df = pd.read_csv(file_path)
@@ -48,8 +49,11 @@ def calculate_outlier_impact(model, X, y, feature_names, threshold=2.0):
     return impact_sorted
 
 # ===== 主程序 =====
-file_path = r"C:\Users\AAF12\Desktop\New_machine\Dataset.csv"
-model = joblib.load(r"C:\Users\AAF12\Desktop\New_machine\result2\xgboost_model_adsorption_amount.joblib")
+#路径区(start)
+base_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))   # 项目根目录
+#路径区(stop)
+file_path = os.path.join(base_path, "Dataset.csv")
+model = joblib.load(os.path.join(base_path, "results", "result2", "xgboost_model_adsorption_amount.joblib"))
 
 X, y, validation_set = prepare_dataset(file_path)
 feature_names = X.columns.tolist()
